@@ -1,0 +1,10 @@
+---
+description: Git remotes and pushes use SSH, not HTTPS
+alwaysApply: true
+---
+
+# Git / GitHub：使用 SSH
+
+- 为该仓库配置或修改 `origin` 时，使用 SSH 地址：`git@github.com:JamesBlueslaoye/Maocoland.git`（若仓库路径变更则替换为对应 `user/repo`）。
+- 不要使用 `https://github.com/...` 作为推送用的 remote（除非用户明确要求）。
+- 推送、拉取说明时默认给出 SSH 远程示例与 `git push -u origin main` 等命令。
