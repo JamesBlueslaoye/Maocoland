@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>毛草乐园 MaocoLand</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/style.css" />
+  </head>
+  <body>
+    <main class="home-page">
+      <section class="hero-banner" aria-label="首页横幅">
+        <img
+          class="hero-image"
+          src="./public/images/page-banner-1.webp"
+          alt="毛草乐园首页 Banner"
+        />
+
+        <header class="hero-topbar">
+          <button class="menu-button" aria-label="打开菜单">
+            <img class="menu-icon" src="./public/icons/menu-icon.png" alt="" aria-hidden="true" />
+          </button>
+
+          <a class="brand-center" href="#" aria-label="回到首页">
+            <img src="./public/icons/MaocoLOGO_TB.png" alt="毛草乐园 Logo" />
+          </a>
+
+          <div class="top-actions">
+            <button class="pill-button language-toggle" type="button">中 / EN</button>
+            <button class="icon-button" aria-label="购物车">
+              <img class="cart-icon" src="./public/icons/online-shopping-icon.png" alt="" aria-hidden="true" />
+            </button>
+          </div>
+        </header>
+      </section>
+
+      <footer class="site-footer">
+        <div class="footer-left">
+          <img class="footer-logo" src="./public/icons/MaocoLOGO_TB.png" alt="毛草乐园 Logo" />
+          <p id="brand-name" class="brand-name">
+            毛草乐园<br />
+            MaocoLand
+          </p>
+        </div>
+
+        <div class="footer-middle">
+          <p id="footer-description" class="footer-description-cn">
+            在毛草乐园，我们鼓励你放下那些不必要的压力，拥抱真实的自己。无论是你的生活，还是你的心情，都可以像我们的毛绒产品一样，带着一点随性和不完美。因为正是这些潦草的瞬间，才让生活变得真实而有趣。潦草一点也没关系，因为生活本来就不该被规则束缚。
+          </p>
+          <p id="footer-copyright" class="footer-copyright">©MaocoLand, INC.</p>
+        </div>
+
+        <div class="footer-right">
+          <div class="social-icons" role="group" aria-label="社交媒体二维码">
+            <button class="social-button" data-target="xiaohongshu" aria-label="小红书" title="小红书">
+              <img class="social-icon" src="./public/icons/social/xiaohongshu-icon.png" alt="" aria-hidden="true" />
+            </button>
+            <button class="social-button" data-target="douyin" aria-label="抖音" title="抖音">
+              <img class="social-icon" src="./public/icons/social/tik-tok-icon.png" alt="" aria-hidden="true" />
+            </button>
+            <button class="social-button" data-target="wechat" aria-label="微信公众号" title="微信公众号">
+              <img class="social-icon" src="./public/icons/social/wechat-icon.png" alt="" aria-hidden="true" />
+            </button>
+            <button class="social-button" data-target="instagram" aria-label="Instagram" title="Instagram">
+              <img class="social-icon" src="./public/icons/social/instagram-icon.png" alt="" aria-hidden="true" />
+            </button>
+          </div>
+          <p id="social-follow-text" class="social-follow-text">关注我们</p>
+        </div>
+      </footer>
+    </main>
+    <div id="qrcode-popover" class="qrcode-popover is-hidden" role="dialog" aria-label="社交二维码弹窗">
+      <img id="social-qrcode" class="qrcode-popover-image" src="./public/qrcodes/xiaohongshu-QR.jpg" alt="小红书二维码" />
+      <p class="qrcode-popover-title">毛草乐园MaocoLand</p>
+      <p id="qrcode-subtitle" class="qrcode-popover-subtitle">扫码关注小红书</p>
+    </div>
+
+    <script src="./scripts/main.js"></script>
+  </body>
+</html>

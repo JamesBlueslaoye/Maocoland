@@ -1,0 +1,12 @@
+.DS_Store
+*.log
+node_modules/
+.next/
+out/
+dist/
+.env
+.env.*
+!.env.example
+
+# 本地参考资料（非站点必需时可保留在本地）
+资料图—非项目文件/

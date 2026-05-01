@@ -1,0 +1,1075 @@
+{
+  "metadata": {
+    "exportedAt": "2026-04-12T08:33:54.847Z",
+    "componentName": "毛草乐园网页设计V2",
+    "totalElements": 54,
+    "nestingDepth": 8,
+    "plugin": "Figma to JSON Exporter"
+  },
+  "designTokens": {
+    "colors": {
+      "color-rgb(255, 255, 255)": "rgb(255, 255, 255)",
+      "color-rgb(255, 249, 240)": "rgb(255, 249, 240)",
+      "color-rgb(224, 212, 195)": "rgb(224, 212, 195)",
+      "color-rgb(10, 10, 10)": "rgb(10, 10, 10)",
+      "color-rgb(30, 41, 57)": "rgb(30, 41, 57)",
+      "color-rgb(74, 85, 101)": "rgb(74, 85, 101)"
+    },
+    "fonts": {
+      "inter": {
+        "family": "Inter",
+        "sizes": {
+          "size-12": "12px",
+          "size-13": "13px",
+          "size-16": "16px"
+        },
+        "weights": {
+          "weight-700": "700",
+          "weight-500": "500"
+        }
+      }
+    },
+    "spacing": {
+      "padding-top-40": "40px",
+      "padding-right-48": "48px",
+      "padding-bottom-40": "40px",
+      "padding-left-48": "48px",
+      "gap-244": "244px",
+      "gap-8": "8px",
+      "gap-24": "24px",
+      "padding-top-2": "2px",
+      "padding-right-2": "2px",
+      "padding-bottom-2": "2px",
+      "padding-left-2": "2px",
+      "padding-top-8": "8px",
+      "padding-right-8": "8px",
+      "padding-left-8": "8px"
+    },
+    "effects": {
+      "shadow-2-1": {
+        "x": 0,
+        "y": 1,
+        "blur": 2,
+        "color": "rgba(0, 0, 0, 0.10000000149011612)"
+      },
+      "shadow-3-1": {
+        "x": 0,
+        "y": 1,
+        "blur": 3,
+        "color": "rgba(0, 0, 0, 0.10000000149011612)"
+      },
+      "shadow-6-3": {
+        "x": 0,
+        "y": 3,
+        "blur": 6,
+        "color": "rgba(0, 0, 0, 0.11999999731779099)"
+      }
+    }
+  },
+  "structure": {
+    "name": "--------v2",
+    "type": "FRAME",
+    "size": {
+      "w": 1470,
+      "h": 890
+    },
+    "styles": {
+      "bg": "rgb(255, 255, 255)",
+      "layout": {
+        "direction": "row",
+        "gap": 0,
+        "align": {
+          "main": "start",
+          "cross": "start"
+        }
+      }
+    },
+    "children": [
+      {
+        "name": "app",
+        "type": "FRAME",
+        "size": {
+          "w": 1470,
+          "h": 890
+        },
+        "styles": {
+          "bg": "rgb(255, 249, 240)",
+          "layout": {
+            "direction": "column",
+            "gap": 0,
+            "align": {
+              "main": "start",
+              "cross": "start"
+            }
+          }
+        },
+        "children": [
+          {
+            "name": "container",
+            "type": "FRAME",
+            "size": {
+              "w": 1470,
+              "h": 716
+            },
+            "styles": {
+              "layout": {
+                "direction": "row",
+                "gap": 0,
+                "align": {
+                  "main": "start",
+                  "cross": "start"
+                }
+              }
+            },
+            "children": [
+              {
+                "name": "main-content",
+                "type": "FRAME",
+                "size": {
+                  "w": 1470,
+                  "h": 636
+                },
+                "styles": {
+                  "layout": {
+                    "direction": "column",
+                    "gap": 0,
+                    "align": {
+                      "main": "start",
+                      "cross": "start"
+                    }
+                  }
+                },
+                "children": [
+                  {
+                    "name": "image--maoco-land-scene-",
+                    "type": "FRAME",
+                    "size": {
+                      "w": 1470,
+                      "h": 636
+                    },
+                    "styles": {
+                      "layout": {
+                        "direction": "row",
+                        "gap": 0,
+                        "align": {
+                          "main": "start",
+                          "cross": "start"
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "footer",
+            "type": "FRAME",
+            "size": {
+              "w": 1470,
+              "h": 174
+            },
+            "styles": {
+              "bg": "rgb(224, 212, 195)",
+              "border": {
+                "width": 1,
+                "color": "rgb(0, 0, 0)"
+              },
+              "layout": {
+                "direction": "row",
+                "gap": 244,
+                "align": {
+                  "main": "space-between",
+                  "cross": "start"
+                },
+                "padding": [
+                  40,
+                  48,
+                  40,
+                  48
+                ]
+              }
+            },
+            "children": [
+              {
+                "name": "container",
+                "type": "FRAME",
+                "size": {
+                  "w": 141,
+                  "h": 40
+                },
+                "styles": {
+                  "layout": {
+                    "direction": "column",
+                    "gap": 0,
+                    "align": {
+                      "main": "start",
+                      "cross": "start"
+                    }
+                  }
+                },
+                "children": [
+                  {
+                    "name": "container",
+                    "type": "FRAME",
+                    "size": {
+                      "w": 141,
+                      "h": 40
+                    },
+                    "styles": {
+                      "layout": {
+                        "direction": "row",
+                        "gap": 0,
+                        "align": {
+                          "main": "start",
+                          "cross": "center"
+                        }
+                      }
+                    },
+                    "children": [
+                      {
+                        "name": "container",
+                        "type": "FRAME",
+                        "size": {
+                          "w": 141,
+                          "h": 40
+                        },
+                        "styles": {
+                          "layout": {
+                            "direction": "row",
+                            "gap": 8,
+                            "align": {
+                              "main": "start",
+                              "cross": "center"
+                            }
+                          }
+                        },
+                        "children": [
+                          {
+                            "name": "imagewithfallback",
+                            "type": "FRAME",
+                            "size": {
+                              "w": 67,
+                              "h": 40
+                            },
+                            "styles": {
+                              "layout": {
+                                "direction": "row",
+                                "gap": 0,
+                                "align": {
+                                  "main": "start",
+                                  "cross": "start"
+                                }
+                              }
+                            }
+                          },
+                          {
+                            "name": "text",
+                            "type": "FRAME",
+                            "size": {
+                              "w": 67,
+                              "h": 30
+                            },
+                            "styles": {
+                              "layout": {
+                                "direction": "row",
+                                "gap": 0,
+                                "align": {
+                                  "main": "start",
+                                  "cross": "start"
+                                }
+                              }
+                            },
+                            "children": [
+                              {
+                                "name": "-----maocoland",
+                                "type": "TEXT",
+                                "size": {
+                                  "w": 67,
+                                  "h": 30
+                                },
+                                "content": "毛草乐园\nMaocoLand",
+                                "styles": {
+                                  "bg": "rgb(10, 10, 10)",
+                                  "text": {
+                                    "family": "Inter",
+                                    "size": 12,
+                                    "weight": "700",
+                                    "align": "left"
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "container",
+                "type": "FRAME",
+                "size": {
+                  "w": 576,
+                  "h": 88
+                },
+                "styles": {
+                  "layout": {
+                    "direction": "column",
+                    "gap": 8,
+                    "align": {
+                      "main": "start",
+                      "cross": "start"
+                    }
+                  }
+                },
+                "children": [
+                  {
+                    "name": "paragraph",
+                    "type": "FRAME",
+                    "size": {
+                      "w": 576,
+                      "h": 59
+                    },
+                    "styles": {
+                      "layout": {
+                        "direction": "row",
+                        "gap": 0,
+                        "align": {
+                          "main": "start",
+                          "cross": "start"
+                        }
+                      }
+                    },
+                    "children": [
+                      {
+                        "name": "maoco-land-brings-small-moments-of-fun-and-happine",
+                        "type": "TEXT",
+                        "size": {
+                          "w": 576,
+                          "h": 59
+                        },
+                        "content": "Maoco Land brings small moments of fun and happiness to life. Based in Shenzhen, China, we are a collective of young creatives dedicated to storytelling. Through our original character series, Maoco Land, we dive into all aspects of life — from the highs and lows to everything in between.",
+                        "styles": {
+                          "bg": "rgb(30, 41, 57)",
+                          "text": {
+                            "family": "Inter",
+                            "size": 12,
+                            "weight": "500",
+                            "align": "left"
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "name": "paragraph",
+                    "type": "FRAME",
+                    "size": {
+                      "w": 576,
+                      "h": 21
+                    },
+                    "styles": {
+                      "layout": {
+                        "direction": "row",
+                        "gap": 0,
+                        "align": {
+                          "main": "start",
+                          "cross": "start"
+                        }
+                      }
+                    },
+                    "children": [
+                      {
+                        "name": "-maocoland--inc-",
+                        "type": "TEXT",
+                        "size": {
+                          "w": 117,
+                          "h": 22
+                        },
+                        "content": "©MaocoLand, INC.",
+                        "styles": {
+                          "bg": "rgb(74, 85, 101)",
+                          "text": {
+                            "family": "Inter",
+                            "size": 13,
+                            "weight": "500",
+                            "align": "left"
+                          }
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "container",
+                "type": "FRAME",
+                "size": {
+                  "w": 168,
+                  "h": 92
+                },
+                "styles": {
+                  "layout": {
+                    "direction": "column",
+                    "gap": 24,
+                    "align": {
+                      "main": "start",
+                      "cross": "end"
+                    }
+                  }
+                },
+                "children": [
+                  {
+                    "name": "container",
+                    "type": "FRAME",
+                    "size": {
+                      "w": 168,
+                      "h": 24
+                    },
+                    "styles": {
+                      "layout": {
+                        "direction": "row",
+                        "gap": 24,
+                        "align": {
+                          "main": "start",
+                          "cross": "center"
+                        }
+                      }
+                    },
+                    "children": [
+                      {
+                        "name": "icon",
+                        "type": "FRAME",
+                        "size": {
+                          "w": 24,
+                          "h": 24
+                        },
+                        "styles": {
+                          "layout": {
+                            "direction": "row",
+                            "gap": 0,
+                            "align": {
+                              "main": "start",
+                              "cross": "start"
+                            }
+                          }
+                        },
+                        "children": [
+                          {
+                            "name": "vector",
+                            "type": "VECTOR",
+                            "size": {
+                              "w": 20,
+                              "h": 20
+                            },
+                            "styles": {
+                              "border": {
+                                "width": 2,
+                                "color": "rgb(10, 10, 10)"
+                              }
+                            }
+                          },
+                          {
+                            "name": "vector",
+                            "type": "VECTOR",
+                            "size": {
+                              "w": 8,
+                              "h": 8
+                            },
+                            "styles": {
+                              "border": {
+                                "width": 2,
+                                "color": "rgb(10, 10, 10)"
+                              }
+                            }
+                          },
+                          {
+                            "name": "vector",
+                            "type": "VECTOR",
+                            "size": {
+                              "w": 0,
+                              "h": 0
+                            },
+                            "styles": {
+                              "border": {
+                                "width": 2,
+                                "color": "rgb(10, 10, 10)"
+                              }
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "name": "icon",
+                        "type": "FRAME",
+                        "size": {
+                          "w": 24,
+                          "h": 24
+                        },
+                        "styles": {
+                          "layout": {
+                            "direction": "row",
+                            "gap": 0,
+                            "align": {
+                              "main": "start",
+                              "cross": "start"
+                            }
+                          }
+                        },
+                        "children": [
+                          {
+                            "name": "vector",
+                            "type": "VECTOR",
+                            "size": {
+                              "w": 20,
+                              "h": 17
+                            },
+                            "styles": {
+                              "border": {
+                                "width": 2,
+                                "color": "rgb(10, 10, 10)"
+                              }
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "name": "icon",
+                        "type": "FRAME",
+                        "size": {
+                          "w": 24,
+                          "h": 24
+                        },
+                        "styles": {
+                          "layout": {
+                            "direction": "row",
+                            "gap": 0,
+                            "align": {
+                              "main": "start",
+                              "cross": "start"
+                            }
+                          }
+                        },
+                        "children": [
+                          {
+                            "name": "vector",
+                            "type": "VECTOR",
+                            "size": {
+                              "w": 8,
+                              "h": 8
+                            },
+                            "styles": {
+                              "border": {
+                                "width": 2,
+                                "color": "rgb(10, 10, 10)"
+                              }
+                            }
+                          },
+                          {
+                            "name": "vector",
+                            "type": "VECTOR",
+                            "size": {
+                              "w": 7,
+                              "h": 16
+                            },
+                            "styles": {
+                              "border": {
+                                "width": 2,
+                                "color": "rgb(10, 10, 10)"
+                              }
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "name": "icon",
+                        "type": "FRAME",
+                        "size": {
+                          "w": 24,
+                          "h": 24
+                        },
+                        "styles": {
+                          "layout": {
+                            "direction": "row",
+                            "gap": 0,
+                            "align": {
+                              "main": "start",
+                              "cross": "start"
+                            }
+                          }
+                        },
+                        "children": [
+                          {
+                            "name": "vector",
+                            "type": "VECTOR",
+                            "size": {
+                              "w": 20,
+                              "h": 14
+                            },
+                            "styles": {
+                              "border": {
+                                "width": 2,
+                                "color": "rgb(10, 10, 10)"
+                              }
+                            }
+                          },
+                          {
+                            "name": "vector",
+                            "type": "VECTOR",
+                            "size": {
+                              "w": 5,
+                              "h": 6
+                            },
+                            "styles": {
+                              "border": {
+                                "width": 2,
+                                "color": "rgb(10, 10, 10)"
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "button",
+                    "type": "FRAME",
+                    "size": {
+                      "w": 159,
+                      "h": 44
+                    },
+                    "styles": {
+                      "border": {
+                        "width": 2,
+                        "color": "rgb(0, 0, 0)"
+                      },
+                      "radius": 16777200,
+                      "layout": {
+                        "direction": "row",
+                        "gap": 0,
+                        "align": {
+                          "main": "start",
+                          "cross": "start"
+                        },
+                        "padding": [
+                          2,
+                          2,
+                          2,
+                          2
+                        ]
+                      }
+                    },
+                    "children": [
+                      {
+                        "name": "about-us",
+                        "type": "TEXT",
+                        "size": {
+                          "w": 82,
+                          "h": 24
+                        },
+                        "content": "ABOUT US",
+                        "styles": {
+                          "bg": "rgb(10, 10, 10)",
+                          "text": {
+                            "family": "Inter",
+                            "size": 16,
+                            "weight": "700",
+                            "align": "center"
+                          }
+                        }
+                      },
+                      {
+                        "name": "icon",
+                        "type": "FRAME",
+                        "size": {
+                          "w": 16,
+                          "h": 16
+                        },
+                        "styles": {
+                          "layout": {
+                            "direction": "row",
+                            "gap": 0,
+                            "align": {
+                              "main": "start",
+                              "cross": "start"
+                            }
+                          }
+                        },
+                        "children": [
+                          {
+                            "name": "vector",
+                            "type": "VECTOR",
+                            "size": {
+                              "w": 7,
+                              "h": 7
+                            },
+                            "styles": {
+                              "border": {
+                                "width": 1,
+                                "color": "rgb(10, 10, 10)"
+                              }
+                            }
+                          },
+                          {
+                            "name": "vector",
+                            "type": "VECTOR",
+                            "size": {
+                              "w": 7,
+                              "h": 7
+                            },
+                            "styles": {
+                              "border": {
+                                "width": 1,
+                                "color": "rgb(10, 10, 10)"
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "header",
+        "type": "FRAME",
+        "size": {
+          "w": 1470,
+          "h": 58
+        },
+        "styles": {
+          "bg": "rgb(255, 249, 240)",
+          "shadow": {
+            "x": 0,
+            "y": 1,
+            "blur": 2,
+            "color": "rgba(0, 0, 0, 0.10000000149011612)"
+          },
+          "layout": {
+            "direction": "row",
+            "gap": 0,
+            "align": {
+              "main": "start",
+              "cross": "start"
+            }
+          }
+        },
+        "children": [
+          {
+            "name": "button",
+            "type": "FRAME",
+            "size": {
+              "w": 34,
+              "h": 34
+            },
+            "styles": {
+              "radius": 16777200,
+              "layout": {
+                "direction": "column",
+                "gap": 0,
+                "align": {
+                  "main": "start",
+                  "cross": "start"
+                },
+                "padding": [
+                  8,
+                  8,
+                  0,
+                  8
+                ]
+              }
+            },
+            "children": [
+              {
+                "name": "icon",
+                "type": "FRAME",
+                "size": {
+                  "w": 18,
+                  "h": 18
+                },
+                "styles": {
+                  "layout": {
+                    "direction": "row",
+                    "gap": 0,
+                    "align": {
+                      "main": "start",
+                      "cross": "start"
+                    }
+                  }
+                },
+                "children": [
+                  {
+                    "name": "vector",
+                    "type": "VECTOR",
+                    "size": {
+                      "w": 12,
+                      "h": 0
+                    },
+                    "styles": {
+                      "border": {
+                        "width": 1,
+                        "color": "rgb(0, 0, 0)"
+                      }
+                    }
+                  },
+                  {
+                    "name": "vector",
+                    "type": "VECTOR",
+                    "size": {
+                      "w": 12,
+                      "h": 0
+                    },
+                    "styles": {
+                      "border": {
+                        "width": 1,
+                        "color": "rgb(0, 0, 0)"
+                      }
+                    }
+                  },
+                  {
+                    "name": "vector",
+                    "type": "VECTOR",
+                    "size": {
+                      "w": 12,
+                      "h": 0
+                    },
+                    "styles": {
+                      "border": {
+                        "width": 1,
+                        "color": "rgb(0, 0, 0)"
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "container",
+            "type": "FRAME",
+            "size": {
+              "w": 84,
+              "h": 34
+            },
+            "styles": {
+              "layout": {
+                "direction": "row",
+                "gap": 0,
+                "align": {
+                  "main": "start",
+                  "cross": "start"
+                }
+              }
+            },
+            "children": [
+              {
+                "name": "button",
+                "type": "FRAME",
+                "size": {
+                  "w": 34,
+                  "h": 34
+                },
+                "styles": {
+                  "radius": 16777200,
+                  "layout": {
+                    "direction": "row",
+                    "gap": 0,
+                    "align": {
+                      "main": "start",
+                      "cross": "start"
+                    }
+                  }
+                },
+                "children": [
+                  {
+                    "name": "icon",
+                    "type": "FRAME",
+                    "size": {
+                      "w": 18,
+                      "h": 18
+                    },
+                    "styles": {
+                      "layout": {
+                        "direction": "row",
+                        "gap": 0,
+                        "align": {
+                          "main": "start",
+                          "cross": "start"
+                        }
+                      }
+                    },
+                    "children": [
+                      {
+                        "name": "vector",
+                        "type": "VECTOR",
+                        "size": {
+                          "w": 14,
+                          "h": 15
+                        },
+                        "styles": {
+                          "border": {
+                            "width": 1,
+                            "color": "rgb(0, 0, 0)"
+                          }
+                        }
+                      },
+                      {
+                        "name": "vector",
+                        "type": "VECTOR",
+                        "size": {
+                          "w": 14,
+                          "h": 0
+                        },
+                        "styles": {
+                          "border": {
+                            "width": 1,
+                            "color": "rgb(0, 0, 0)"
+                          }
+                        }
+                      },
+                      {
+                        "name": "vector",
+                        "type": "VECTOR",
+                        "size": {
+                          "w": 6,
+                          "h": 3
+                        },
+                        "styles": {
+                          "border": {
+                            "width": 1,
+                            "color": "rgb(0, 0, 0)"
+                          }
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "button",
+                "type": "FRAME",
+                "size": {
+                  "w": 34,
+                  "h": 34
+                },
+                "styles": {
+                  "radius": 16777200,
+                  "layout": {
+                    "direction": "row",
+                    "gap": 0,
+                    "align": {
+                      "main": "start",
+                      "cross": "start"
+                    }
+                  }
+                },
+                "children": [
+                  {
+                    "name": "icon",
+                    "type": "FRAME",
+                    "size": {
+                      "w": 18,
+                      "h": 18
+                    },
+                    "styles": {
+                      "layout": {
+                        "direction": "row",
+                        "gap": 0,
+                        "align": {
+                          "main": "start",
+                          "cross": "start"
+                        }
+                      }
+                    },
+                    "children": [
+                      {
+                        "name": "vector",
+                        "type": "VECTOR",
+                        "size": {
+                          "w": 15,
+                          "h": 15
+                        },
+                        "styles": {
+                          "border": {
+                            "width": 1,
+                            "color": "rgb(0, 0, 0)"
+                          }
+                        }
+                      },
+                      {
+                        "name": "vector",
+                        "type": "VECTOR",
+                        "size": {
+                          "w": 6,
+                          "h": 15
+                        },
+                        "styles": {
+                          "border": {
+                            "width": 1,
+                            "color": "rgb(0, 0, 0)"
+                          }
+                        }
+                      },
+                      {
+                        "name": "vector",
+                        "type": "VECTOR",
+                        "size": {
+                          "w": 15,
+                          "h": 0
+                        },
+                        "styles": {
+                          "border": {
+                            "width": 1,
+                            "color": "rgb(0, 0, 0)"
+                          }
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "imagewithfallback",
+            "type": "FRAME",
+            "size": {
+              "w": 80,
+              "h": 48
+            },
+            "styles": {
+              "shadow": {
+                "x": 0,
+                "y": 3,
+                "blur": 6,
+                "color": "rgba(0, 0, 0, 0.11999999731779099)"
+              },
+              "layout": {
+                "direction": "row",
+                "gap": 0,
+                "align": {
+                  "main": "start",
+                  "cross": "start"
+                }
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "summary": {
+    "components": 0,
+    "instances": 0,
+    "frames": 31,
+    "texts": 4,
+    "hasAutoLayout": true,
+    "hasEffects": true
+  }
+}
