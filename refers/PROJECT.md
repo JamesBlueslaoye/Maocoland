@@ -29,6 +29,7 @@
 ### 开发环境
 - **包管理器**：pnpm（锁定使用，禁止混用 npm）
 - **代码检查**：ESLint + TypeScript
+- **Next 配置文件**：本仓库使用 `next.config.mjs`（与 Next 14.2 行为一致；勿在 14.2 下使用 `next.config.ts`，构建会失败）
 
 ---
 
@@ -123,7 +124,7 @@ project/
 ├── .eslintrc.json               # ESLint 配置
 ├── .prettierrc.json             # Prettier 配置
 ├── pnpm-lock.yaml               # pnpm 锁定文件（禁止混用 npm，防止 lock 冲突）
-├── next.config.ts               # Next.js 配置
+├── next.config.mjs              # Next.js 配置（14.2 仅支持 .mjs / .js；升级新版后可按需改为 .ts）
 ├── tailwind.config.ts           # Tailwind CSS 配置
 ├── tsconfig.json                # TypeScript 配置
 ├── package.json                 # 项目依赖

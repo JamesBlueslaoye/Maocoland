@@ -1,10 +1,17 @@
-import { SocialQrcode } from "../features/social-qrcode";
+import Image from "next/image";
+import { SocialQrcode } from "@/components/features/social-qrcode";
 
 export function Footer() {
   return (
     <footer className="site-footer">
       <div className="footer-left">
-        <img className="footer-logo" src="/icons/MaocoLOGO_TB.png" alt="毛草乐园 Logo" />
+        <Image
+          className="footer-logo"
+          src="/icons/MaocoLOGO_TB.png"
+          alt="毛草乐园 Logo"
+          width={80}
+          height={80}
+        />
         <p className="brand-name">
           毛草乐园
           <br />

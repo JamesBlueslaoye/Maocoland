@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useState } from "react";
 
 type SocialKey = "xiaohongshu" | "douyin" | "wechat" | "instagram";
@@ -39,6 +40,15 @@ export function SocialQrcode() {
 
   return (
     <>
+      {isPopoverOpen ? (
+        <button
+          type="button"
+          className="qrcode-backdrop"
+          aria-label="关闭二维码"
+          onClick={() => setIsPopoverOpen(false)}
+        />
+      ) : null}
+
       <div className="social-icons" role="group" aria-label="社交媒体二维码">
         {socialKeys.map((key) => {
           const item = socialMap[key];
@@ -51,6 +61,7 @@ export function SocialQrcode() {
               type="button"
               aria-label={item.alt.replace("二维码", "")}
               title={item.alt.replace("二维码", "")}
+              aria-expanded={isActive && isPopoverOpen}
               onClick={() => {
                 if (isActive && isPopoverOpen) {
                   setIsPopoverOpen(false);
@@ -60,10 +71,23 @@ export function SocialQrcode() {
                 setIsPopoverOpen(true);
               }}
             >
-              <img className="social-icon" src={item.icon} alt="" aria-hidden="true" />
+              <Image
+                className="social-icon"
+                src={item.icon}
+                alt=""
+                width={24}
+                height={24}
+                aria-hidden
+              />
               {isActive && isPopoverOpen ? (
                 <div className="qrcode-popover" role="dialog" aria-label={`${item.alt}弹窗`}>
-                  <img className="qrcode-popover-image" src={item.src} alt={item.alt} />
+                  <Image
+                    className="qrcode-popover-image"
+                    src={item.src}
+                    alt={item.alt}
+                    width={124}
+                    height={124}
+                  />
                   <p className="qrcode-popover-title">毛草乐园MaocoLand</p>
                   <p className="qrcode-popover-subtitle">{item.subtitle}</p>
                 </div>

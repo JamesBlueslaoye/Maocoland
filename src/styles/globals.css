@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
   --notion-black: rgba(0, 0, 0, 0.95);
   --notion-white: #ffffff;
@@ -15,47 +19,107 @@
   box-sizing: border-box;
 }
 
-body {
+body.site-body {
   margin: 0;
   font-family: Inter, -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei",
     sans-serif;
   color: var(--notion-black);
   background: var(--notion-white);
   -webkit-font-smoothing: antialiased;
+  overflow-x: clip;
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
 }
 
 .home-page {
   width: 100%;
   min-height: 100vh;
+  min-height: 100dvh;
 }
 
 .hero-banner {
   position: relative;
   width: 100%;
   padding: 0;
+  margin: 0;
   background: var(--notion-white);
-  display: flex;
-  justify-content: center;
+  display: block;
+}
+
+.hero-banner-media {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: var(--notion-white);
+  aspect-ratio: var(--hero-ar-landscape);
+}
+
+/* 视口高度 ≥ 宽度（竖屏、方形）：切换为竖版素材占位比例 */
+@media (max-aspect-ratio: 1/1) {
+  .hero-banner-media {
+    aspect-ratio: var(--hero-ar-portrait);
+  }
+}
+
+.hero-banner-picture-slot {
+  position: absolute;
+  inset: 0;
+}
+
+.hero-banner-picture-slot picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-banner-picture-slot picture > span {
+  width: 100% !important;
+  height: 100% !important;
 }
 
 .hero-image {
-  width: 100%;
-  height: auto;
   object-fit: contain;
-  display: block;
+  object-position: center center;
+}
+
+/* 窄屏 + 横屏视口：仍用横版图时裁切中间 */
+@media (max-width: 768px) and (min-aspect-ratio: 1/1) {
+  .hero-banner-media {
+    min-height: min(44vh, 420px);
+  }
+
+  .hero-image {
+    object-fit: cover;
+    object-position: center center;
+  }
+}
+
+/* 窄屏 + 竖屏视口：竖版素材完整显示 */
+@media (max-width: 768px) and (max-aspect-ratio: 1/1) {
+  .hero-banner-media {
+    min-height: unset;
+  }
+
+  .hero-image {
+    object-fit: contain;
+    object-position: center center;
+  }
 }
 
 .hero-topbar {
   position: absolute;
-  top: 12px;
+  top: max(12px, env(safe-area-inset-top));
   left: 0;
   z-index: 5;
   width: 100%;
   height: auto;
-  padding: 0 24px;
+  /* body.site-body 已含横向 safe-area，此处不再叠加 env，避免左侧双倍缩进 */
+  padding: 0 16px;
+  box-sizing: border-box;
   display: grid;
-  grid-template-columns: 1fr auto 1fr;
+  grid-template-columns: auto 1fr auto;
   align-items: center;
+  gap: 12px;
   background: transparent;
 }
 
@@ -96,12 +160,16 @@ body {
 }
 
 .icon-button {
-  width: 34px;
-  height: 34px;
+  min-width: 44px;
+  min-height: 44px;
+  width: 44px;
+  height: 44px;
   border-radius: 9999px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .cart-icon {
@@ -112,25 +180,35 @@ body {
 }
 
 .pill-button {
-  min-width: 68px;
-  height: 34px;
+  min-width: 72px;
+  min-height: 44px;
+  height: auto;
+  padding: 0 12px;
   border-radius: 9999px;
   font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.125px;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .menu-button {
   border: none;
   background: transparent;
-  padding: 0;
+  padding: 10px;
+  margin: 0;
   cursor: pointer;
-  width: 24px;
-  height: 24px;
+  min-width: 44px;
+  min-height: 44px;
+  width: auto;
+  height: auto;
   display: inline-flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  justify-self: start;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .menu-icon {
@@ -151,10 +229,11 @@ body {
 .site-footer {
   width: 100%;
   display: grid;
-  grid-template-columns: 150px minmax(300px, 576px) 220px;
+  grid-template-columns: minmax(120px, 150px) minmax(0, 1fr) minmax(160px, 220px);
   justify-content: space-between;
   gap: 24px;
-  padding: 40px 48px;
+  padding: 40px max(24px, env(safe-area-inset-left)) 40px max(24px, env(safe-area-inset-right));
+  padding-bottom: max(40px, env(safe-area-inset-bottom));
   background: var(--notion-warm-white);
   border-top: var(--whisper-border);
 }
@@ -201,24 +280,34 @@ body {
 
 .social-icons {
   display: flex;
+  flex-wrap: wrap;
+  align-items: center;
   gap: 16px;
 }
 
 .social-button {
-  width: 24px;
-  height: 24px;
+  box-sizing: border-box;
+  min-width: 44px;
+  min-height: 44px;
+  width: 44px;
+  height: 44px;
   position: relative;
   border: none;
   background: transparent;
-  padding: 0;
+  padding: 10px;
+  margin: -10px;
   cursor: pointer;
   opacity: 0.65;
   transition: opacity 0.15s ease, transform 0.15s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .social-button:hover {
   opacity: 1;
-  transform: translateY(-1px);
 }
 
 .social-button.active {
@@ -286,14 +375,78 @@ body {
   }
 }
 
-@media (max-width: 1080px) {
+@keyframes popover-in-sheet {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 移动端扫码遮罩（JS 仅在有浮层时挂载） */
+.qrcode-backdrop {
+  display: none;
+}
+
+@media (max-width: 640px) {
+  .qrcode-backdrop {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 90;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    touch-action: manipulation;
+  }
+
+  .qrcode-popover {
+    position: fixed;
+    left: max(16px, env(safe-area-inset-left));
+    right: max(16px, env(safe-area-inset-right));
+    bottom: max(24px, env(safe-area-inset-bottom));
+    top: auto;
+    transform: none;
+    width: auto;
+    max-width: none;
+    height: auto;
+    min-height: unset;
+    animation: popover-in-sheet 0.22s ease-out;
+    z-index: 100;
+  }
+
+  .qrcode-popover-image {
+    width: min(124px, 36vw);
+    height: auto;
+    max-height: 36vh;
+    object-fit: contain;
+  }
+
+  .footer-middle p {
+    font-size: 13px;
+    line-height: 1.55;
+  }
+
+  .brand-name {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 1024px) {
   .hero-banner {
     padding: 0;
   }
 
   .site-footer {
     grid-template-columns: 1fr;
-    padding: 28px 20px;
+    padding: 28px max(20px, env(safe-area-inset-left)) max(28px, env(safe-area-inset-bottom))
+      max(20px, env(safe-area-inset-right));
     gap: 20px;
   }
 
