@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect } from "react";
 import { useLocaleStore } from "@/store";
 
@@ -25,7 +26,7 @@ export function Header() {
         />
       </button>
 
-      <a className="brand-center" href="/" aria-label="回到首页">
+      <Link className="brand-center" href="/" aria-label="回到首页">
         <Image
           src="/icons/MaocoLOGO_TB.png"
           alt="毛草乐园 Logo"
@@ -33,7 +34,7 @@ export function Header() {
           height={128}
           className="h-auto w-[64px] max-w-[64px] object-contain"
         />
-      </a>
+      </Link>
 
       <div className="top-actions">
         <button className="pill-button" type="button" onClick={toggleLocale}>

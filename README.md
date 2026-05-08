@@ -1,6 +1,6 @@
 # MaocoLand（毛草乐园）
 
-品牌官网，基于 **Next.js 14（App Router）** + **TypeScript** + **Tailwind CSS** + **pnpm**。规范见 `refers/PROJECT.md`。
+品牌官网，基于 **Next.js 16（App Router）** + **React 19** + **TypeScript** + **Tailwind CSS** + **pnpm**。规范见 `refers/PROJECT.md`。
 
 ## 环境要求
 
@@ -16,11 +16,14 @@ pnpm run dev
 
 开发地址：http://localhost:3000
 
+Next.js 16 起默认使用 **Turbopack** 进行开发与生产构建。若在超大仓库根目录下误检测到上级目录的 lockfile，已在 `next.config.mjs` 中通过 `turbopack.root` 固定本项目根目录。
+
 若终端出现 **`EMFILE: too many open files`**（开发监听占用文件句柄过多），可任选其一：
 
 1. **提高本机句柄上限**（推荐，macOS 终端执行一次后再 `pnpm run dev`）：`ulimit -n 10240`
-2. **改用轮询监听**（略耗 CPU，但更稳）：`pnpm run dev:poll`
-3. 仓库根目录已排除本地大图包目录 `资料图—非项目文件/` 的监听；请勿把海量素材放在需参与编译的目录下。
+2. **改用 Webpack 开发模式**（沿用配置里的 `watchOptions`）：`next dev --webpack`
+3. **改用轮询监听**（略耗 CPU，但更稳）：`pnpm run dev:poll`
+4. 仓库根目录已排除本地大图包目录 `资料图—非项目文件/` 的监听；请勿把海量素材放在需参与编译的目录下。
 
 - 首页 `/`：Banner 资源见 `public/images/`（横竖版切换逻辑见 `HomeHero`）
 
@@ -32,6 +35,8 @@ pnpm run type-check
 pnpm run build
 ```
 
+自 Next.js 16 起 CLI 不再提供 `next lint`，本项目使用 **ESLint 9** 与扁平配置 **`eslint.config.mjs`**（沿用 `eslint-config-next/core-web-vitals`）。`pnpm run lint` 等价于在项目根执行 `eslint .`。
+
 ## 目录说明（简要）
 
 | 路径 | 说明 |
@@ -42,6 +47,7 @@ pnpm run build
 | `src/lib/` | 工具与常量 |
 | `src/store/` | Zustand 状态（如语言切换） |
 | `src/styles/globals.css` | 全局样式 + Tailwind 入口 |
+| `eslint.config.mjs` | ESLint 扁平配置（Next 官方规则） |
 | `refers/PROJECT.md` | 技术栈与目录约定 |
 
 ## Git 远程
@@ -58,6 +64,8 @@ git push -u origin main
 ## Vercel 部署
 
 在 Vercel 连接本仓库后，**使用默认的 Next.js 检测与构建**即可（`pnpm install` + `next build`），**无需**再使用根目录 `index.html` 的静态重定向方案。若项目里曾手工设置 Framework 为 **Other** 或自定义 Output，请在 Vercel 项目设置中改回 **Next.js** 并清除对根目录静态输出的覆盖。
+
+若部署到 **Cloudflare Workers（OpenNext 等）**，请使用与 Next **16**、**React 19** 匹配的适配器版本，并按官方文档配置缓存与构建脚本。
 
 ## 环境变量
 

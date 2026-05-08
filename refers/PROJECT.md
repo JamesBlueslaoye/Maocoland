@@ -8,15 +8,15 @@
 
 ### 核心技术栈
 - **前端框架**：
-  - Next.js: 14.2.x (>= 14.2.35)
-  - React: 18.3.x (>= 18.3.1)
+  - Next.js: 16.2.x（与 `package.json` 中 `next` 版本保持一致）
+  - React: 19.2.x（与 `package.json` 中 `react` / `react-dom` 保持一致）
 - **样式方案**：Tailwind CSS
 - **类型系统**：TypeScript 5.x
 - **状态管理**：Zustand（业务状态）
 
 ### 版本约束补丁（强制）
-- **禁止使用** `next@14.2.5` 及以下版本（存在高危 CVE 漏洞）
-- 若 `pnpm audit` 发现安全警告，必须立即升级至最新的 14.2.x 补丁版本
+- **禁止使用** 已停止安全维护的 Next / React 大版本；关注 `pnpm audit` 与官方安全通报
+- 若 `pnpm audit` 发现安全警告，应优先升级到当前大版本下的**最新补丁**
 
 ### 运行环境
 - **Node.js**：>= 20.x (推荐 22.x LTS)
@@ -28,8 +28,8 @@
 
 ### 开发环境
 - **包管理器**：pnpm（锁定使用，禁止混用 npm）
-- **代码检查**：ESLint + TypeScript
-- **Next 配置文件**：本仓库使用 `next.config.mjs`（与 Next 14.2 行为一致；勿在 14.2 下使用 `next.config.ts`，构建会失败）
+- **代码检查**：ESLint 9（扁平配置 `eslint.config.mjs`）+ TypeScript
+- **Next 配置文件**：本仓库使用 `next.config.mjs`（可按官方文档按需改为 `next.config.ts`）
 
 ---
 
@@ -121,10 +121,10 @@ project/
 ├── .gitignore                   # Git 忽略文件
 ├── .env.local                   # 本地环境变量（不提交 Git）
 ├── .env.example                 # 环境变量示例（提交 Git）
-├── .eslintrc.json               # ESLint 配置
+├── eslint.config.mjs            # ESLint 扁平配置（Next 16 + eslint-config-next）
 ├── .prettierrc.json             # Prettier 配置
 ├── pnpm-lock.yaml               # pnpm 锁定文件（禁止混用 npm，防止 lock 冲突）
-├── next.config.mjs              # Next.js 配置（14.2 仅支持 .mjs / .js；升级新版后可按需改为 .ts）
+├── next.config.mjs              # Next.js 配置
 ├── tailwind.config.ts           # Tailwind CSS 配置
 ├── tsconfig.json                # TypeScript 配置
 ├── package.json                 # 项目依赖

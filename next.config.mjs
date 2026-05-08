@@ -1,9 +1,22 @@
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
 
   /**
-   * 缓解开发时 Watchpack `EMFILE: too many open files`：
+   * Next.js 16 起默认以 Turbopack 构建；声明 `turbopack` 与项目根，避免与自定义 `webpack` 冲突、
+   * 并减少「多份 lockfile」时误选上级目录的告警。
+   */
+  turbopack: {
+    root: __dirname,
+  },
+
+  /**
+   * 使用 `next dev --webpack` 时生效：缓解 Watchpack `EMFILE: too many open files`：
    * - 忽略不参与编译的大目录（如本地资料图）
    * - 可选环境变量 `WATCHPACK_POLLING=1` 启用轮询（文件描述符紧张环境）
    */
