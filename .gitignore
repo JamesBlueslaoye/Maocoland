@@ -2,12 +2,15 @@
 *.log
 node_modules/
 .next/
+.open-next/
+.wrangler/
 out/
 dist/
 *.tsbuildinfo
 .env
 .env.*
 !.env.example
+.dev.vars
 
 # 本地参考资料（非站点必需时可保留在本地）
 资料图—非项目文件/

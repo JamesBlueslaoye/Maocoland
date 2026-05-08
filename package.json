@@ -6,6 +6,9 @@
     "dev": "next dev",
     "dev:poll": "WATCHPACK_POLLING=1 next dev",
     "build": "next build",
+    "build:cf": "opennextjs-cloudflare build",
+    "deploy:cf": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
+    "preview:cf": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
     "start": "next start",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
@@ -19,6 +22,7 @@
     "zustand": "^5.0.0"
   },
   "devDependencies": {
+    "@opennextjs/cloudflare": "^1.19.8",
     "@types/node": "^20.14.0",
     "@types/react": "^19.2.0",
     "@types/react-dom": "^19.2.0",
@@ -28,7 +32,8 @@
     "postcss": "^8.4.38",
     "prettier": "^3.3.0",
     "tailwindcss": "^3.4.4",
-    "typescript": "^5.5.0"
+    "typescript": "^5.5.0",
+    "wrangler": "^4.90.0"
   },
   "engines": {
     "node": ">=20.0.0"

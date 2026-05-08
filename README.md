@@ -48,6 +48,8 @@ pnpm run build
 | `src/store/` | Zustand 状态（如语言切换） |
 | `src/styles/globals.css` | 全局样式 + Tailwind 入口 |
 | `eslint.config.mjs` | ESLint 扁平配置（Next 官方规则） |
+| `wrangler.jsonc` | Cloudflare Workers / OpenNext 部署配置 |
+| `open-next.config.ts` | OpenNext Cloudflare 适配配置 |
 | `refers/PROJECT.md` | 技术栈与目录约定 |
 
 ## Git 远程
@@ -65,7 +67,15 @@ git push -u origin main
 
 在 Vercel 连接本仓库后，**使用默认的 Next.js 检测与构建**即可（`pnpm install` + `next build`），**无需**再使用根目录 `index.html` 的静态重定向方案。若项目里曾手工设置 Framework 为 **Other** 或自定义 Output，请在 Vercel 项目设置中改回 **Next.js** 并清除对根目录静态输出的覆盖。
 
-若部署到 **Cloudflare Workers（OpenNext 等）**，请使用与 Next **16**、**React 19** 匹配的适配器版本，并按官方文档配置缓存与构建脚本。
+### Cloudflare Workers（OpenNext）
+
+本仓库已纳入 **`@opennextjs/cloudflare`** 与 **`wrangler.jsonc`**。Worker 脚本名固定为 **`maocoland-web`**（与 `package.json` 的 `name` 一致）；`WORKER_SELF_REFERENCE` 必须指向同名服务，否则会报错 **10143**。
+
+- **推荐一键部署**：`pnpm run deploy:cf`（等价于 `opennextjs-cloudflare build && opennextjs-cloudflare deploy`）。
+- **拆分步骤**：先 `pnpm run build:cf` 生成 `.open-next/`，再 `pnpm exec wrangler deploy`（Wrangler 会读取仓库里的 `wrangler.jsonc`）。
+- **勿**仅用 `next build` 后再裸跑 `npx wrangler deploy` 且不带 OpenNext 产物；也不要依赖 Wrangler 在无配置文件时自动推断 Worker 名（易出现 `maocolandweb` / `maocoland-web` 混用）。
+
+本地预览：`pnpm run preview:cf`。可选复制 `.dev.vars.example` 为 `.dev.vars`。详见 [OpenNext Cloudflare — Get Started](https://opennext.js.org/cloudflare/get-started)。
 
 ## 环境变量
 
