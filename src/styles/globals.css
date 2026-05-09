@@ -117,7 +117,8 @@ body.site-body {
   padding: 0 16px;
   box-sizing: border-box;
   display: grid;
-  grid-template-columns: auto 1fr auto;
+  /* 左右等宽，中间 auto：Logo 落在视口水平正中（避免「左窄右宽」时视觉偏移） */
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
   gap: 12px;
   background: transparent;
@@ -125,6 +126,12 @@ body.site-body {
 
 .brand-center {
   justify-self: center;
+}
+
+@media (max-width: 768px) {
+  .hero-topbar .brand-center {
+    transform: translate(5px, -2px);
+  }
 }
 
 .brand-center img {
